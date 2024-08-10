@@ -7,7 +7,7 @@ import sys
 def check_num(num):
     if num < 2:
         return False
-    for i in range(2, int(num**0.5) + 1):
+    for i in range(2, int(num**0.5) + 1): # 책 읽어보기
         if num % i == 0:
             return False
     return True
@@ -15,14 +15,18 @@ def check_num(num):
 def goldbach(n):
     # 돌면서 빼보고 소수인지 확인해서 return
     num = int(n)
-    for i in range(2, num//2 + 1):
+    # for i in range(2, num//2 + 1):
+    for i in range(num//2, 2, -1): 
         if check_num(i) and check_num(num-i):
-            return i, num-i
+            return min(i, num-i), max(i, num-i)
+    return None
 
 count = int(sys.stdin.readline())
 nums = [sys.stdin.readline().strip() for _ in range(count)]
 
-
 for n in nums:
-    g1, g2 = goldbach(n)
-    print(f'{g1} {g2}')
+    if n == '4':
+        print('2 2')
+    else:
+        g1, g2 = goldbach(n)
+        print(f'{g1} {g2}')

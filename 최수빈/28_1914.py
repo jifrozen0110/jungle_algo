@@ -10,7 +10,7 @@ def move(no, x, y):
     print(x, y)
     
     if no > 1:
-        move(no-1, 6-x-y, x)
+        move(no-1, 6-x-y, y)
 
 cnt = int(sys.stdin.readline())
 

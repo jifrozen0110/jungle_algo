@@ -20,3 +20,8 @@ for i in range(n):
 
 # astarisk * : 언패킹 연산자
 print(*result_arr)
+
+# 숫자 배열을 인쇄하면 어떻게 나올까?
+int_arr = [1, 2, 3]
+print(int_arr)
+# [1, 2, 3]
